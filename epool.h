@@ -1,5 +1,6 @@
 
-
+#ifndef EPOOL_THREAD_POOL_H
+#define EPOOL_THREAD_POOL_H
 
 #define BUFFER_SIZE 100
 
@@ -46,3 +47,5 @@ int pool_init(int max_thread_num);
 int pool_add_worker(thread_func_t process);
 
 int pool_destroy();
+
+#endif

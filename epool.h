@@ -4,6 +4,8 @@
 
 #define BUFFER_SIZE 100
 
+#define MAX_THREAD_NUM 5
+
 typedef struct client_data {
 	int sockfd;
 
@@ -33,10 +35,13 @@ typedef struct cthread_pool {
 		cthread_worker_t* queue_head;
 
 		// thread array
-		pthread_t* threads;
+		pthread_t* thread_array;
 		int max_thread_num;
 
 		int cur_queue_size;
+
+		// whether stop the server
+		int shutdown;
 } cthread_pool_t;
 
 
